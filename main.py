@@ -40,7 +40,6 @@ EMBEDDING_STATUS = {"status": "IDLE", "last_run": "Never", "message": "Ready to 
 # ------------------ RAG PIPELINE (Query Logic - from installer.py) ------------------
 class RAGPipeline:
     def __init__(self):
-        os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
         self.vectorstore = None
         self.qa_chain = None
         self._initialize_pipeline()
