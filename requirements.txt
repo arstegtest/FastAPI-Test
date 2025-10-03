@@ -1,0 +1,19 @@
+# Core web framework
+fastapi
+uvicorn
+
+# Data validation
+pydantic
+
+# MongoDB driver
+pymongo
+
+# LangChain core + community integrations
+langchain
+langchain-community
+langchain-openai
+langchain-huggingface
+langchain-mongodb
+
+# Document loaders
+docx2txt
