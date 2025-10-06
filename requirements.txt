@@ -1,7 +1,6 @@
 # Core web framework
 fastapi
 uvicorn
-gunicorn
 sentence-transformers
 
 # Data validation
@@ -19,3 +18,4 @@ langchain-mongodb
 
 # Document loaders
 docx2txt
+
