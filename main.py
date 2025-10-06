@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 # LangChain / RAG imports
-from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain_mongodb import MongoDBAtlasVectorSearch
@@ -49,7 +49,7 @@ class RAGPipeline:
             client = MongoClient(MONGO_CLIENT_KEY)
             collection = client[DB_NAME][COLLECTION_NAME]
             
-            embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+            embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
             self.vectorstore = MongoDBAtlasVectorSearch(
                 embedding=embeddings,

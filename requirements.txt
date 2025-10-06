@@ -1,6 +1,7 @@
 # Core web framework
 fastapi
 uvicorn
+sentence-transformers
 
 # Data validation
 pydantic
@@ -12,6 +13,7 @@ pymongo
 langchain
 langchain-community
 langchain-openai
+langchain-huggingface
 langchain-mongodb
 
 # Document loaders
