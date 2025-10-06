@@ -1,6 +1,7 @@
 # Core web framework
 fastapi
 uvicorn
+gunicorn
 sentence-transformers
 
 # Data validation
