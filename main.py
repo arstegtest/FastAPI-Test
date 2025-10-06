@@ -11,6 +11,7 @@ from typing import Optional
 # LangChain / RAG imports
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
+from langchain_openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain_mongodb import MongoDBAtlasVectorSearch
 from pymongo import MongoClient
@@ -27,7 +28,7 @@ STATE_FILE = ".processed_docs.json"
 DB_NAME = "vector_db"
 COLLECTION_NAME = "embeddings"
 INDEX_NAME = "vector_index"
-EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 LLM_MODEL_NAME = "gpt-4o-mini"
 DOCUMENT_FOLDERS = [
     "D:/Work/AI/Appointment Letters",
