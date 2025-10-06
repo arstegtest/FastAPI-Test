@@ -49,7 +49,7 @@ class RAGPipeline:
             client = MongoClient(MONGO_CLIENT_KEY)
             collection = client[DB_NAME][COLLECTION_NAME]
             
-            embeddings = OpenAIEmbeddings(model="text-embedding-3-small",OPENAI_API_KEY)
+            embeddings = OpenAIEmbeddings(model="text-embedding-3-small",api_key=OPENAI_API_KEY)
 
             self.vectorstore = MongoDBAtlasVectorSearch(
                 embedding=embeddings,
