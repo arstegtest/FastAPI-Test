@@ -9,7 +9,6 @@ from pydantic import BaseModel
 from typing import Optional
 
 # LangChain / RAG imports
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
@@ -28,7 +27,7 @@ STATE_FILE = ".processed_docs.json"
 DB_NAME = "vector_db"
 COLLECTION_NAME = "embeddings"
 INDEX_NAME = "vector_index"
-EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL_NAME = "sentence-transformers/all-mpnet-base-v2"
 LLM_MODEL_NAME = "gpt-4o-mini"
 DOCUMENT_FOLDERS = [
     "D:/Work/AI/Appointment Letters",
@@ -50,7 +49,7 @@ class RAGPipeline:
             client = MongoClient(MONGO_CLIENT_KEY)
             collection = client[DB_NAME][COLLECTION_NAME]
             
-            embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
+            embeddings = OpenAIEmbeddings(model="text-embedding-3-small",OPENAI_API_KEY)
 
             self.vectorstore = MongoDBAtlasVectorSearch(
                 embedding=embeddings,
